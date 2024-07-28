@@ -3,7 +3,7 @@ const {gameOption, againOption} = require ('./options');
 const token = '7460964264:AAEBYYKuwu7d1jXpKfPou9OQ1xTVEvrlHlw';
 const bot = new TelegramApi (token, {polling: true});
 const chats = {};
-const a = 't'
+const a = 'kkk'
 
 
 const startGame = async (chatId) => { // генерация рандомной цияры для игры
