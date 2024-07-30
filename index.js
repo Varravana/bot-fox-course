@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 const TelegramApi = require ('node-telegram-bot-api');
 const {gameOption, againOption} = require ('./options');
-const token = '7460964264:AAEBYYKuwu7d1jXpKfPou9OQ1xTVEvrlHlw';
-const bot = new TelegramApi (token, {polling: true});
+
+const bot = new TelegramApi (process.env.NODE_TOKEN, {polling: true});
 const chats = {};
 
 
@@ -12,7 +14,7 @@ const startGame = async (chatId) => { // генерация рандомной �
     await bot.sendMessage (chatId, 'Отгадывай число, я загадал', gameOption)
 }
 const start=() => { 
-
+console.log("hiiii",process.env.NODE_TOKEN)
     //описание команд в меню
     bot.setMyCommands ([ 
         {command:'/start', description: 'Начальное сообщение'},
