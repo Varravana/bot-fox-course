@@ -14,7 +14,6 @@ const startGame = async (chatId) => { // генерация рандомной �
     await bot.sendMessage (chatId, 'Отгадывай число, я загадал', gameOption)
 }
 const start=() => { 
-console.log("hiiii",process.env.NODE_TOKEN)
     //описание команд в меню
     bot.setMyCommands ([ 
         {command:'/start', description: 'Начальное сообщение'},
