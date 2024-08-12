@@ -7,7 +7,7 @@ const bot = new TelegramApi (process.env.NODE_TOKEN, {polling: true});
 const chats = {};
 
 
-const startGame = async (chatId) => { // генерация рандомной цияры для игры
+const startGame = async (chatId) => { // генерация рандомной цифры для игры
     await bot.sendMessage (chatId, 'я загадаю число от 0 до 9, а ты отгадай какое');
     const randomNumber = Math. floor(Math.random() * 10);
     chats [chatId]= randomNumber;
@@ -19,6 +19,7 @@ const start=() => {
         {command:'/start', description: 'Начальное сообщение'},
         {command:'/info', description: 'информация о пользователе'},
         {command:'/game', description: 'игра угадай число'},
+        {command:'/text', description: 'текст и картинка с компьютера'},
     ]) 
 
     // прием сообщение и реакция на них
@@ -36,9 +37,15 @@ const start=() => {
 
     if (text === '/game') {
        return startGame (chatId);
+    };
+
+    if (text === '/text'){
+        await bot.send_photo(chat_id, photo=open('C:\Users\ideal\for_programming', 'g14'))
+        return bot.sendMessage (chatId, "Полезный текст, иллюстрирующий содержание картинки и раскрывающий тему теоретического блока.")
     } else {
         return bot.sendMessage (chatId, `ты написал мне ${text}`)
     }
+   
             
         });
         
