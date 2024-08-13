@@ -40,7 +40,7 @@ const start=() => {
     };
 
     if (text === '/text'){
-        await bot.send_photo(chat_id, photo=open('C:\Users\ideal\for_programming', 'g14'))
+        await bot.sendPhoto(chat_id, 'g14.png')
         return bot.sendMessage (chatId, "Полезный текст, иллюстрирующий содержание картинки и раскрывающий тему теоретического блока.")
     } else {
         return bot.sendMessage (chatId, `ты написал мне ${text}`)
